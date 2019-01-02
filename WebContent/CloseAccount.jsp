@@ -9,5 +9,8 @@
 		<label>Enter the AccountNumber to close account: <input type="number" name="closeaccount"></label>
 		<label><input type="submit" name="Closeaccount" value="Closeaccount"></label>
 	</form>
+	<div>
+		<jsp:include page="homeLink.html"></jsp:include>
+	</div>
 </body>
 </html>
