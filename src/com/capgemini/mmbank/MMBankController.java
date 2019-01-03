@@ -261,6 +261,35 @@ public class MMBankController extends HttpServlet {
 			}
 			break;	
 			
+		case "/sortById.mm":
+			flag=!flag;
+			ArrayList<SavingsAccount> accountId;
+			try {
+				accountId = (ArrayList<SavingsAccount>) savingsAccountService.getAllSavingsAccount();
+				Collections.sort(accountId,new Comparator<SavingsAccount>()
+				{
+				@Override
+				public int compare(SavingsAccount arg0, SavingsAccount arg1) {
+					int result= (int) (arg0.getBankAccount().getAccountNumber()- arg1.getBankAccount().getAccountNumber());
+					if(flag==true)
+					{
+						return result;
+					}
+					else
+					{
+						return -result;
+					}
+				}
+				});
+				request.setAttribute("accounts", accountId);
+				dispatcher = request.getRequestDispatcher("AccountDetails.jsp");
+				dispatcher.forward(request, response);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+			break;	
+			
+			
 		case "/sortBySalaried.mm":
 			flag=!flag;
 			ArrayList<SavingsAccount> accountSalary;
@@ -291,7 +320,7 @@ public class MMBankController extends HttpServlet {
 			break;	
 			
 		case "/update.mm":
-			
+	  
 		}
 	}
 	
