@@ -290,6 +290,8 @@ public class MMBankController extends HttpServlet {
 			}
 			break;	
 			
+		case "/update.mm":
+			
 		}
 	}
 	

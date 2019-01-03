@@ -6,10 +6,10 @@
 </head>
 <body>
 	<form action="transfer.mm">
-		<label>Enter sender's account number:<input type="number" name="senderaccnum"></label>
-		<label>Enter receiver's account number:<input type="number" name="receiveraccnum"></label>
-		<label>Enter amount to transfer:<input type="number" name="amounttotransfer"></label>
-		<label><input type="submit" name="submit" value="Transfer Amount"></label>
+		<label>Enter sender's account number:</label><input type="number" name="senderaccnum">
+		<label>Enter receiver's account number:</label><input type="number" name="receiveraccnum">
+		<label>Enter amount to transfer:</label><input type="number" name="amounttotransfer">
+		<input type="submit" name="submit" value="Transfer Amount">
 	</form>
 	<div>
 		<jsp:include page="homeLink.html"></jsp:include>

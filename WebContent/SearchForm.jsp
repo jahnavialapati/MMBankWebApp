@@ -6,7 +6,7 @@
 </head>
 <body>
 	<form action="search.mm">
-		Enter Account Number: <input type="number" name="txtAccountNumber" />
+		<label>Enter Account Number:</label><input type="number" name="txtAccountNumber" />
 		<br /> <input type="submit" value="Submit">
 	</form>
 	<div>

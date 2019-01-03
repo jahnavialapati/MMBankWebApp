@@ -6,8 +6,8 @@
 </head>
 <body>
 	<form action="closeAccount.mm">
-		<label>Enter the AccountNumber to close account: <input type="number" name="closeaccount"></label>
-		<label><input type="submit" name="Closeaccount" value="Closeaccount"></label>
+		<label>Enter the AccountNumber to close account: </label><input type="number" name="closeaccount">
+		<input type="submit" name="Closeaccount" value="Closeaccount">
 	</form>
 	<div>
 		<jsp:include page="homeLink.html"></jsp:include>

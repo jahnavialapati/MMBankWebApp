@@ -8,8 +8,11 @@
 </head>
 <body>
 	<form>
-	<label>Enter Account number in which you have to update details</label><input type="number" name="accountnumber"><br/>
+	<label>Enter Account number in which you have to update details</label><input type="number" name="txtNumber" ><br/>
 	<input type="submit" value="Submit">
 	</form>
+	<div>
+		<jsp:include page="homeLink.html"></jsp:include>
+	</div>
 </body>
 </html>
