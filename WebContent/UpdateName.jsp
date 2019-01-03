@@ -8,7 +8,6 @@
 </head>
 <body>
 <form action ="updateName.mm">
-	           	<h1>UPDATE AN ACCOUNT</h1>
 	           	Account Number : <br><input type="text" name="txtNum" readonly="readonly" value="${requestScope.accounts.bankAccount.accountNumber}"><br><br>
 	           	Name :<br><input type="text" name="txtAccHn" value="${requestScope.accounts.bankAccount.accountHolderName}"/><br><br>
 				AccountBalance :<br><input type="text" name="txtBal" readonly="readonly" value="${requestScope.accounts.bankAccount.accountBalance}"><br><br>
