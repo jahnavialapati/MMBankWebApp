@@ -7,9 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form>
+	<form action="updating.mm">
 	<label>Enter Account number in which you have to update details</label><input type="number" name="txtNumber" ><br/>
 	<input type="submit" value="Submit">
+	 <input type="reset" value="Clear" />
+  <br>
 	</form>
 	<div>
 		<jsp:include page="homeLink.html"></jsp:include>

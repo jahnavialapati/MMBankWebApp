@@ -55,6 +55,7 @@ public class MMBankController extends HttpServlet {
 		String path=request.getServletPath();
 		PrintWriter out=response.getWriter();
 		
+		String newName = null;
 		switch(path){
 		case "/newSavingsAccount.mm":
 			response.sendRedirect("OpenSavingsAccount.jsp");
@@ -320,7 +321,35 @@ public class MMBankController extends HttpServlet {
 			break;	
 			
 		case "/update.mm":
-	  
+			response.sendRedirect("Update.jsp");
+			break;
+		case "/updating.mm":
+			int accountNum = Integer.parseInt(request.getParameter("txtNumber"));
+			try {
+				SavingsAccount update = savingsAccountService.getAccountById(accountNum);
+				request.setAttribute("accounts", update);
+				dispatcher = request.getRequestDispatcher("UpdateName.jsp");
+				dispatcher.forward(request, response);
+			} catch (ClassNotFoundException | SQLException| AccountNotFoundException e) {
+				e.printStackTrace();
+			}
+				break;
+		case "/updateName.mm":
+			int accountId1 = Integer.parseInt(request.getParameter("txtNum"));
+			SavingsAccount update;
+			try {
+				update = savingsAccountService.getAccountById(accountId1);
+				String accHName = request.getParameter("txtAccHn");
+				update.getBankAccount().setAccountHolderName(accHName);
+				double accBal = Double.parseDouble(request.getParameter("txtBal"));
+				boolean isSalary = request.getParameter("rdSal").equalsIgnoreCase("no")?false:true;
+				update.setSalary(isSalary);
+				savingsAccountService.updateAccount(update);
+				response.sendRedirect("getAll.mm");
+			} catch (ClassNotFoundException | SQLException | AccountNotFoundException e) {
+				e.printStackTrace();
+			}
+			break;
 		}
 	}
 	
